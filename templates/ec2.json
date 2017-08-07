@@ -1,0 +1,30 @@
+{
+   
+    "Parameters": {
+        
+        "EC2Name": {
+            "Type": "String"
+        }
+        
+    },
+    
+    "Resources": {
+        "myinstance": {
+            "Properties": {
+                "ImageId": "ami-d7b9a2b1",
+                "InstanceType": "t2.micro",
+                "Tags" : [ 
+          				{
+            				"Key" : "Application", 
+           					 "Value" : { "Ref" : "AWS::StackId"} 
+          				},
+          				{
+           				 "Key" : "Name",
+           				 "Value" :  {"Ref" : "EC2Name"}
+         				 }]
+      
+            },
+            "Type": "AWS::EC2::Instance"
+        }
+    }
+}

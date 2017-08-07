@@ -1,0 +1,40 @@
+{
+    "Parameters": {
+        "CidrBlock": {
+            "Type": "String"
+        },
+        
+        "VPCName": {
+            "Type": "String"
+        }
+        
+    },
+    "Resources": {
+        "VPC": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": {
+                "Ref": "CidrBlock"
+                },
+                
+                "Tags" : [ 
+          				{
+            				"Key" : "Application", 
+           					 "Value" : { "Ref" : "AWS::StackId"} 
+          				},
+          				{
+           				 "Key" : "Name",
+           				 "Value" : {  "Fn::Join" : [ "::", [ { "Ref" : "AWS::StackId"} , { "Ref" : "VPCName"} ] ]  }
+         				 }]
+      
+            }
+        }
+    },
+    "Outputs": {
+        "VpcId": {
+            "Value": {
+                "Ref": "VPC"
+            }
+        }
+    }
+}

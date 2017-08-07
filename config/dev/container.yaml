@@ -1,0 +1,19 @@
+template_path: templates\container_stack.yaml
+parameters:
+      VPC: vpc-31169256
+      Cluster: ecs-deploy-demo-infra
+      DesiredCount: "3" 
+      Listener: arn:aws:elasticloadbalancing:eu-west-1:998292383020:listener/app/ecs-deploy-demo-infra/3e6a8174251e93a1/a2f8ee248912fcb1
+      ProductServiceUrl: ecs-deploy-demo-infra-2043942136.eu-west-1.elb.amazonaws.com/products
+      Path: / 
+      ImageRepo: 275396840892.dkr.ecr.us-east-1.amazonaws.com/ecs-refarch-cloudformation/website-service
+      ImageVersion: 1.0.0
+      ContainerName: website-service
+      ContainerPort: "8000"
+      ContainerFamily: website-service
+      ContainerEssential: "true"
+      ContainerMemory: "128"
+      EnvVar1: PRODUCT_SERVICE_URL
+      
+      
+      

@@ -1,0 +1,3 @@
+template_path: templates\api.json
+parameters:
+    ApiName: mySceptreAPI

@@ -1,0 +1,3 @@
+template_path: templates\ec2.json
+parameters:
+    EC2Name: DEVInstance

@@ -1,0 +1,3 @@
+template_path: templates\s3-bucket.json
+parameters:
+    BucketName: my-tropo-sceptre-bucket
